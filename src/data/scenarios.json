@@ -1,0 +1,290 @@
+{
+  "cold": {
+    "id": "cold",
+    "questions": [
+      {
+        "id": "fever",
+        "sv": "Har du feber (över 38°C)?",
+        "en": "Do you have a fever (over 38°C / 100.4°F)?",
+        "options": [
+          { "id": "yes_high", "sv": "Ja, över 39°C", "en": "Yes, over 39°C (102°F)" },
+          { "id": "yes_low", "sv": "Ja, 38–39°C", "en": "Yes, 38–39°C (100–102°F)" },
+          { "id": "no", "sv": "Nej, ingen feber", "en": "No fever" }
+        ]
+      },
+      {
+        "id": "duration",
+        "sv": "Hur länge har du haft symtomen?",
+        "en": "How long have you had these symptoms?",
+        "options": [
+          { "id": "over_week", "sv": "Mer än en vecka", "en": "More than a week" },
+          { "id": "few_days", "sv": "2–7 dagar", "en": "2–7 days" },
+          { "id": "today", "sv": "Startade idag eller igår", "en": "Started today or yesterday" }
+        ]
+      },
+      {
+        "id": "breathing",
+        "sv": "Har du svårt att andas normalt?",
+        "en": "Are you having any difficulty breathing normally?",
+        "options": [
+          { "id": "yes", "sv": "Ja, tydlig andningssvårighet", "en": "Yes, clear difficulty breathing" },
+          { "id": "somewhat", "sv": "Lite trångt, men inte allvarligt", "en": "Slightly tight but not serious" },
+          { "id": "no", "sv": "Nej, andas normalt", "en": "No, breathing normally" }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "conditions": { "breathing": "yes" },
+        "outcome": "narakuten",
+        "reason": {
+          "sv": "Andningssvårigheter i kombination med förkylningssymtom kan behöva bedömas av sjukvård samma dag.",
+          "en": "Breathing difficulties combined with cold symptoms should be assessed by healthcare the same day."
+        }
+      },
+      {
+        "conditions": { "fever": "yes_high", "duration": "over_week" },
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "Hög feber som varat mer än en vecka bör undersökas av en läkare för att utesluta infektion.",
+          "en": "A high fever lasting more than a week should be examined by a doctor to rule out infection."
+        }
+      },
+      {
+        "conditions": { "duration": "over_week" },
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "Symtom som håller i sig mer än en vecka bör utvärderas av en läkare.",
+          "en": "Symptoms lasting more than a week should be evaluated by a doctor."
+        }
+      },
+      {
+        "conditions": {},
+        "outcome": "egenvard",
+        "reason": {
+          "sv": "Vanlig förkylning eller mild influensa klarar sig vanligtvis med vila, vätska och egenvård hemma. 1177 har bra råd om symtomen förvärras.",
+          "en": "A common cold or mild flu usually resolves with rest, fluids and self-care at home. 1177 has good advice if symptoms worsen."
+        }
+      }
+    ]
+  },
+  "injury": {
+    "id": "injury",
+    "questions": [
+      {
+        "id": "type",
+        "sv": "Vad är det för slags skada?",
+        "en": "What type of injury is it?",
+        "options": [
+          { "id": "cut", "sv": "Skärsår eller sårskada", "en": "Cut or wound" },
+          { "id": "sprain", "sv": "Stukning eller vrickning", "en": "Sprain or strain" },
+          { "id": "blow", "sv": "Slag, stöt eller fall", "en": "Blow, impact or fall" }
+        ]
+      },
+      {
+        "id": "severity",
+        "sv": "Hur allvarlig känns skadan?",
+        "en": "How serious does the injury feel?",
+        "options": [
+          { "id": "severe", "sv": "Väldigt svår — jag kan inte använda den skadade kroppsdelen", "en": "Very severe — I can't use the injured body part" },
+          { "id": "moderate", "sv": "Ganska svår — svullet, ömt, svårt att röra", "en": "Quite bad — swollen, tender, hard to move" },
+          { "id": "mild", "sv": "Lindrig — ömhet men fungerar", "en": "Mild — sore but functional" }
+        ]
+      },
+      {
+        "id": "bleeding",
+        "sv": "Blöder det kraftigt eller slutar det inte blöda?",
+        "en": "Is there heavy bleeding or bleeding that won't stop?",
+        "options": [
+          { "id": "yes", "sv": "Ja, kraftig eller fortsatt blödning", "en": "Yes, heavy or ongoing bleeding" },
+          { "id": "no", "sv": "Nej, det blöder inte eller har stannat", "en": "No, not bleeding or it has stopped" }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "conditions": { "bleeding": "yes" },
+        "outcome": "narakuten",
+        "reason": {
+          "sv": "Kraftig eller ihållande blödning behöver bedömas och eventuellt behandlas av sjukvårdspersonal samma dag.",
+          "en": "Heavy or persistent bleeding needs to be assessed and possibly treated by healthcare staff the same day."
+        }
+      },
+      {
+        "conditions": { "severity": "severe" },
+        "outcome": "narakuten",
+        "reason": {
+          "sv": "En allvarlig skada där du inte kan använda kroppsdelen bör undersökas idag — det kan röra sig om ett brott eller svår stukning.",
+          "en": "A severe injury where you can't use the body part should be examined today — it could be a fracture or serious sprain."
+        }
+      },
+      {
+        "conditions": { "severity": "moderate" },
+        "outcome": "narakuten",
+        "reason": {
+          "sv": "Svullnad och svårigheter att röra den skadade delen tyder på att du bör få en bedömning idag.",
+          "en": "Swelling and difficulty moving the injured part suggests you should get an assessment today."
+        }
+      },
+      {
+        "conditions": {},
+        "outcome": "egenvard",
+        "reason": {
+          "sv": "En lindrig skada kan vanligtvis skötas hemma med RICE-metoden: Vila, Is, Kompression och Elevation. 1177 har detaljerade råd.",
+          "en": "A mild injury can usually be managed at home using RICE: Rest, Ice, Compression and Elevation. 1177 has detailed advice."
+        }
+      }
+    ]
+  },
+  "chest": {
+    "id": "chest",
+    "questions": [
+      {
+        "id": "pain_character",
+        "sv": "Hur känns smärtan i bröstet?",
+        "en": "How would you describe the chest pain?",
+        "options": [
+          { "id": "crushing", "sv": "Tryckande, klämande eller strålande ut mot armen/käken", "en": "Crushing, squeezing or radiating to arm/jaw" },
+          { "id": "sharp", "sv": "Stickande eller skärande, värre vid djupt andetag", "en": "Sharp or stabbing, worse with deep breath" },
+          { "id": "mild", "sv": "Mild, otydlig smärta eller obehag", "en": "Mild, vague pain or discomfort" }
+        ]
+      },
+      {
+        "id": "breathing",
+        "sv": "Har du svår andnöd eller känner du att du inte får luft?",
+        "en": "Do you have severe shortness of breath or feel you can't get air?",
+        "options": [
+          { "id": "yes", "sv": "Ja, tydlig andningssvårighet", "en": "Yes, clear difficulty breathing" },
+          { "id": "no", "sv": "Nej, andas nästan normalt", "en": "No, breathing almost normally" }
+        ]
+      },
+      {
+        "id": "other_symptoms",
+        "sv": "Har du något av dessa symtom just nu?",
+        "en": "Do you have any of these symptoms right now?",
+        "options": [
+          { "id": "yes", "sv": "Ja — illamående, svettningar, yrsel eller svimningskänsla", "en": "Yes — nausea, sweating, dizziness or feeling faint" },
+          { "id": "no", "sv": "Nej, inga av dessa", "en": "No, none of these" }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "conditions": { "pain_character": "crushing" },
+        "outcome": "akuten",
+        "reason": {
+          "sv": "Tryckande bröstsmärta som strålar ut är ett allvarligt varningstecken som kan tyda på hjärtinfarkt. Ring 112 omedelbart — varje minut räknas.",
+          "en": "Crushing chest pain that radiates is a serious warning sign that may indicate a heart attack. Call 112 immediately — every minute counts."
+        }
+      },
+      {
+        "conditions": { "breathing": "yes" },
+        "outcome": "akuten",
+        "reason": {
+          "sv": "Svår andnöd i kombination med bröstsmärta är ett akut tillstånd. Ring 112 nu.",
+          "en": "Severe shortness of breath combined with chest pain is an emergency. Call 112 now."
+        }
+      },
+      {
+        "conditions": { "other_symptoms": "yes" },
+        "outcome": "akuten",
+        "reason": {
+          "sv": "Bröstsmärta tillsammans med illamående, svettningar eller yrsel kan vara tecken på en hjärthändelse. Ring 112 omedelbart.",
+          "en": "Chest pain together with nausea, sweating or dizziness may be signs of a cardiac event. Call 112 immediately."
+        }
+      },
+      {
+        "conditions": { "pain_character": "sharp" },
+        "outcome": "narakuten",
+        "reason": {
+          "sv": "Stickande smärta som förvärras vid andning kan bero på pleurainflammation eller annat tillstånd som bör undersökas idag.",
+          "en": "Sharp pain that worsens with breathing could be pleurisy or another condition that should be examined today."
+        }
+      },
+      {
+        "conditions": {},
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "Mild bröstsmärta utan alarmerande symtom bör ändå utredas. Boka tid hos din läkare inom de närmaste dagarna.",
+          "en": "Mild chest discomfort without alarming symptoms should still be investigated. Book an appointment with your GP within the next few days."
+        }
+      }
+    ]
+  },
+  "mental": {
+    "id": "mental",
+    "questions": [
+      {
+        "id": "severity",
+        "sv": "Hur påverkar det här din vardag?",
+        "en": "How is this affecting your daily life?",
+        "options": [
+          { "id": "severe", "sv": "Väldigt mycket — jag klarar knappt av dagen", "en": "A great deal — I'm barely getting through the day" },
+          { "id": "moderate", "sv": "En hel del — svårt att fungera som vanligt", "en": "Quite a lot — struggling to function normally" },
+          { "id": "mild", "sv": "Lite — märker av det men klarar mig", "en": "A little — I notice it but I'm managing" }
+        ]
+      },
+      {
+        "id": "duration",
+        "sv": "Hur länge har du känt så här?",
+        "en": "How long have you been feeling this way?",
+        "options": [
+          { "id": "over_month", "sv": "Mer än en månad", "en": "More than a month" },
+          { "id": "weeks", "sv": "Några veckor", "en": "A few weeks" },
+          { "id": "days", "sv": "Några dagar", "en": "A few days" }
+        ]
+      },
+      {
+        "id": "crisis",
+        "sv": "Har du tankar på att skada dig själv eller ta ditt liv?",
+        "en": "Do you have thoughts of harming yourself or ending your life?",
+        "options": [
+          { "id": "yes", "sv": "Ja", "en": "Yes" },
+          { "id": "no", "sv": "Nej", "en": "No" }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "conditions": { "crisis": "yes" },
+        "outcome": "akuten",
+        "reason": {
+          "sv": "Tankar på att skada sig själv är ett krisläge. Ring 112 eller åk till närmaste akutmottagning nu. Du kan också ringa Självmordslinjen på 90101 (öppen dygnet runt).",
+          "en": "Thoughts of self-harm are a crisis. Call 112 or go to your nearest A&E now. You can also call Mind Självmordslinjen at 90101 (open 24/7)."
+        }
+      },
+      {
+        "conditions": { "severity": "severe" },
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "När psykisk ohälsa påverkar din vardag kraftigt är det viktigt att träffa en läkare. Din vårdcentral kan hjälpa dig vidare, antingen direkt eller via remiss till specialistvård.",
+          "en": "When mental health severely affects your daily life, it's important to see a doctor. Your GP can help, either directly or via referral to specialist care."
+        }
+      },
+      {
+        "conditions": { "duration": "over_month", "severity": "moderate" },
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "Symtom som pågått i mer än en månad och påverkar din funktion bör utvärderas av din läkare.",
+          "en": "Symptoms lasting more than a month that affect your functioning should be evaluated by your GP."
+        }
+      },
+      {
+        "conditions": { "duration": "over_month" },
+        "outcome": "vardcentral",
+        "reason": {
+          "sv": "Nedstämdhet eller ångest i mer än en månad bör tas på allvar. Boka tid hos din vårdcentral.",
+          "en": "Low mood or anxiety for more than a month should be taken seriously. Book an appointment with your GP."
+        }
+      },
+      {
+        "conditions": {},
+        "outcome": "egenvard",
+        "reason": {
+          "sv": "Kortvarig nedstämdhet eller stress är vanligt och kan ofta lindras med egenvård: sömn, rörelse, kontakt med nära och kära. Mind.se erbjuder också bra resurser och stöd.",
+          "en": "Short-term low mood or stress is common and can often be helped with self-care: sleep, movement, connection with loved ones. Mind.se also offers good resources and support."
+        }
+      }
+    ]
+  }
+}

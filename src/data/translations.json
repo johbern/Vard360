@@ -1,0 +1,140 @@
+{
+  "sv": {
+    "appName": "Vägledaren",
+    "appTagline": "Hjälp att hitta rätt vård",
+    "appDescription": "Besvara några korta frågor så hjälper vi dig att förstå vilket vårdalternativ som passar bäst för ditt behov.",
+    "startButton": "Kom igång",
+    "backButton": "Tillbaka",
+    "restartButton": "Börja om",
+    "languageToggle": "English",
+    "selectConcern": "Vad vill du ha hjälp med?",
+    "notSure": "Jag är osäker",
+    "notSureDesc": "Hjälp mig att förstå vad jag behöver",
+    "question": "Fråga",
+    "of": "av",
+    "recommended": "Vår rekommendation",
+    "why": "Varför detta?",
+    "whatToDo": "Vad du bör göra nu",
+    "disclaimer": "Detta verktyg ersätter inte medicinsk rådgivning. Vid livshotande situationer, ring alltid 112.",
+    "footer": "Vägledaren är ett informationsverktyg. All hälsoinformation är baserad på 1177 Vårdguidens riktlinjer.",
+    "outcomes": {
+      "egenvard": {
+        "title": "Egenvård",
+        "subtitle": "Du kan troligen hantera detta hemma",
+        "color": "green",
+        "icon": "🏠",
+        "action": "Läs mer om egenvård på 1177.se",
+        "actionUrl": "https://www.1177.se/sjukdomar--besvar/",
+        "urgency": "Inte brådskande"
+      },
+      "vardcentral": {
+        "title": "Vårdcentral",
+        "subtitle": "Boka tid hos din läkare inom några dagar",
+        "color": "blue",
+        "icon": "🏥",
+        "action": "Boka tid via 1177.se",
+        "actionUrl": "https://www.1177.se/hitta-vard/",
+        "urgency": "Inom några dagar"
+      },
+      "narakuten": {
+        "title": "Närakuten",
+        "subtitle": "Du behöver söka vård idag",
+        "color": "orange",
+        "icon": "⚕️",
+        "action": "Hitta närmaste närakut",
+        "actionUrl": "https://www.1177.se/hitta-vard/",
+        "urgency": "Samma dag"
+      },
+      "akuten": {
+        "title": "Ring 112 eller åk till akuten",
+        "subtitle": "Sök hjälp omedelbart",
+        "color": "red",
+        "icon": "🚨",
+        "action": "Ring 112 nu",
+        "actionUrl": "tel:112",
+        "urgency": "Omedelbart"
+      }
+    },
+    "scenarios": {
+      "cold": "Förkylning eller influensa",
+      "injury": "Skada eller sår",
+      "chest": "Bröstsmärta eller andningssvårigheter",
+      "mental": "Psykisk hälsa och mående"
+    },
+    "scenarioDescriptions": {
+      "cold": "Hosta, snuva, feber eller ont i halsen",
+      "injury": "Stukning, skärsår, slag eller fall",
+      "chest": "Smärta i bröstet, andfåddhet eller hjärtklappning",
+      "mental": "Nedstämdhet, ångest, stress eller sömnproblem"
+    }
+  },
+  "en": {
+    "appName": "Vägledaren",
+    "appTagline": "Finding the right care",
+    "appDescription": "Answer a few short questions and we'll help you understand which care option best suits your needs.",
+    "startButton": "Get started",
+    "backButton": "Back",
+    "restartButton": "Start over",
+    "languageToggle": "Svenska",
+    "selectConcern": "What do you need help with?",
+    "notSure": "I'm not sure",
+    "notSureDesc": "Help me understand what I need",
+    "question": "Question",
+    "of": "of",
+    "recommended": "Our recommendation",
+    "why": "Why this?",
+    "whatToDo": "What you should do now",
+    "disclaimer": "This tool does not replace medical advice. In life-threatening situations, always call 112.",
+    "footer": "Vägledaren is an information tool. All health information is based on 1177 Vårdguiden guidelines.",
+    "outcomes": {
+      "egenvard": {
+        "title": "Self-care",
+        "subtitle": "You can likely manage this at home",
+        "color": "green",
+        "icon": "🏠",
+        "action": "Read more about self-care on 1177.se",
+        "actionUrl": "https://www.1177.se/sjukdomar--besvar/",
+        "urgency": "Not urgent"
+      },
+      "vardcentral": {
+        "title": "GP / Primary care",
+        "subtitle": "Book an appointment within a few days",
+        "color": "blue",
+        "icon": "🏥",
+        "action": "Book via 1177.se",
+        "actionUrl": "https://www.1177.se/hitta-vard/",
+        "urgency": "Within a few days"
+      },
+      "narakuten": {
+        "title": "Urgent care clinic",
+        "subtitle": "You should seek care today",
+        "color": "orange",
+        "icon": "⚕️",
+        "action": "Find nearest urgent care clinic",
+        "actionUrl": "https://www.1177.se/hitta-vard/",
+        "urgency": "Same day"
+      },
+      "akuten": {
+        "title": "Call 112 or go to A&E",
+        "subtitle": "Seek help immediately",
+        "color": "red",
+        "icon": "🚨",
+        "action": "Call 112 now",
+        "actionUrl": "tel:112",
+        "urgency": "Immediately"
+      }
+    },
+    "scenarios": {
+      "cold": "Cold or flu",
+      "injury": "Injury or wound",
+      "chest": "Chest pain or breathing difficulty",
+      "mental": "Mental health and wellbeing"
+    },
+    "scenarioDescriptions": {
+      "cold": "Cough, runny nose, fever or sore throat",
+      "injury": "Sprain, cut, bruise or fall",
+      "chest": "Chest pain, shortness of breath or palpitations",
+      "mental": "Low mood, anxiety, stress or sleep problems"
+    }
+  }
+}
